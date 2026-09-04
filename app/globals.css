@@ -131,19 +131,19 @@
 .mobile-menu nav .mobile-booking { margin-top: 0.5rem; background: var(--gold); text-align: center; }
 
 .hero { position: relative; min-height: calc(100vh - 76px); overflow: hidden; background: var(--navy); color: white; }
-.hero-grid { display: grid; min-height: calc(100vh - 76px); grid-template-columns: minmax(0, 0.9fr) minmax(480px, 1.1fr); }
-.hero-copy { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 5rem max(3rem, calc((100vw - 1180px) / 2)) 5rem max(2.5rem, calc((100vw - 1180px) / 2)); background: linear-gradient(125deg, var(--navy) 0%, #0c2233 100%); }
+.hero-grid { display: grid; min-height: calc(100vh - 76px); grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr); }
+.hero-copy { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: clamp(3rem, 5vw, 5rem) clamp(2rem, 4vw, 4rem) 6rem max(2.5rem, calc((100vw - 1180px) / 2)); background: linear-gradient(125deg, var(--navy) 0%, #0c2233 100%); }
 .hero-copy::before { content: ''; position: absolute; left: max(2.5rem, calc((100vw - 1180px) / 2)); top: 14%; width: 1px; height: 4.5rem; background: linear-gradient(var(--gold), transparent); }
 .eyebrow { margin-bottom: 1.4rem; color: var(--gold-light); font-size: 0.75rem; font-weight: 750; letter-spacing: 0.2em; text-transform: uppercase; }
-.hero h1 { max-width: 700px; font-size: clamp(3.2rem, 6vw, 6.8rem); font-weight: 600; line-height: 0.88; letter-spacing: -0.045em; }
+.hero h1 { max-width: 700px; font-size: clamp(3.2rem, 5vw, 5.8rem); font-weight: 600; line-height: 0.96; letter-spacing: -0.045em; }
 .hero h1 em { display: block; color: var(--gold-light); font-style: normal; }
 .hero-lead { max-width: 620px; margin-top: 1.8rem; color: #d5dce1; font-size: clamp(1rem, 1.4vw, 1.12rem); line-height: 1.75; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
 .text-link { display: inline-flex; min-height: 2.75rem; align-items: center; gap: 0.55rem; border-bottom: 1px solid rgb(255 255 255 / 45%); color: white; font-size: 0.88rem; font-weight: 700; }
 .hero-note { display: flex; align-items: center; gap: 0.55rem; margin-top: 2rem; color: #aab6bf; font-size: 0.78rem; }
-.hero-media { position: relative; min-height: 610px; }
+.hero-media { position: relative; display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 610px; padding: 3rem clamp(1.5rem, 3vw, 3rem) 6rem; }
 .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgb(8 24 39 / 64%) 0%, transparent 35%), linear-gradient(0deg, rgb(8 24 39 / 42%) 0%, transparent 50%); }
-.consultation-card { position: absolute; z-index: 3; right: max(2rem, calc((100vw - 1180px) / 2)); bottom: 3.5rem; width: min(410px, calc(100% - 64px)); background: rgb(255 255 255 / 96%); color: var(--navy); box-shadow: 0 30px 70px rgb(0 0 0 / 34%); }
+.consultation-card { position: relative; z-index: 3; width: min(410px, 100%); background: rgb(255 255 255 / 96%); color: var(--navy); box-shadow: 0 30px 70px rgb(0 0 0 / 34%); }
 .dossier-head { display: grid; grid-template-columns: 5px 1fr; background: #10283b; color: white; }
 .dossier-head span { background: var(--gold); }
 .dossier-head div { padding: 1.25rem 1.4rem; }
@@ -164,8 +164,7 @@
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-copy { min-height: 620px; padding: 6rem 2.5rem 7rem; }
-  .hero-media { min-height: 640px; }
-  .consultation-card { right: 2rem; }
+  .hero-media { min-height: 540px; padding: 3rem 2rem; }
   .practice-ribbon { position: static; }
 }
 @media (max-width: 640px) {
@@ -174,8 +173,7 @@
   .hero-copy { min-height: 590px; padding: 5rem 1.4rem 5rem; }
   .hero-copy::before { left: 1.4rem; }
   .hero h1 { font-size: clamp(3rem, 15vw, 4.3rem); }
-  .hero-media { min-height: 600px; }
-  .consultation-card { right: 1rem; bottom: 2.25rem; width: calc(100% - 32px); }
+  .hero-media { min-height: 0; padding: 2.5rem 1rem; }
   .practice-ribbon .site-shell { grid-template-columns: 1fr 1fr; width: 100%; }
   .practice-ribbon span:last-child { grid-column: 1 / -1; }
 }
