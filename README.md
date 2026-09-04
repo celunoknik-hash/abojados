@@ -19,6 +19,25 @@ El sitio local se abre normalmente en `http://localhost:3000`.
 pnpm build
 ```
 
+## Publicar en GitHub Pages
+
+El código de la aplicación debe compilarse antes de publicarse. Publicar la raíz
+del repositorio con Jekyll muestra este README en lugar del sitio.
+
+```bash
+pnpm build:pages
+```
+
+La versión estática se genera en `dist/client/`, con HTML para las cuatro
+páginas, estilos, imágenes y rutas bajo `/abojados/`.
+
+En GitHub, seleccione **Settings > Pages > Build and deployment > Source >
+GitHub Actions**. El flujo `.github/workflows/deploy-pages.yml` compila y publica
+el sitio al actualizar `main`, y también permite ejecutarlo manualmente.
+
+El enlace publicado es https://celunoknik-hash.github.io/abojados/.
+`pnpm dev` y `pnpm build` conservan la configuración de Sites.
+
 ## Editar el contenido
 
 La marca, navegación, áreas de práctica, datos de contacto y enlace de reserva se encuentran en `lib/site-config.ts`.

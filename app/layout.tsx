@@ -17,7 +17,11 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://abojados.tiny-reed-2234.chatgpt.site'),
+  metadataBase: new URL(
+    process.env.GITHUB_PAGES === 'true'
+      ? 'https://celunoknik-hash.github.io/abojados/'
+      : 'https://abojados.tiny-reed-2234.chatgpt.site',
+  ),
   title: {
     default: `${siteConfig.name} | ${siteConfig.descriptor}`,
     template: `%s | ${siteConfig.name}`,

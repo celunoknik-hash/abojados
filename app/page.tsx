@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, CalendarDays, FileSearch, LockKeyhole, MessageSquareText, ShieldCheck } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
@@ -58,13 +57,12 @@ export default function Home() {
           </div>
 
           <div className="hero-media">
-            <Image
-              src="/hero-office.png"
+            {/* oxlint-disable-next-line nextjs/no-img-element -- The static export serves this image without a runtime optimizer. */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/hero-office.png`}
               alt="Oficina contemporánea preparada para una consulta jurídica"
-              fill
-              priority
-              sizes="(max-width: 980px) 100vw, 56vw"
-              className="object-cover"
+              fetchPriority="high"
+              className="absolute inset-0 h-full w-full object-cover"
             />
             <article className="consultation-card" id="agenda" aria-labelledby="booking-title">
               <header className="dossier-head">
