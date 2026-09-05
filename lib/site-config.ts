@@ -3,7 +3,7 @@ export const siteConfig = {
   descriptor: 'Estudio jurídico',
   description:
     'Sitio demostrativo de orientación jurídica con información editable y reserva externa de consultas.',
-  bookingUrl: '',
+  bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1c2pCo7H5qVzA5XZYQNgqOZMsBh1n9A2LroyM4beUzCj0it7IW4q_RkWUu14EoocHh-VZJzjQF?gv=true",
   bookingFallback: '/contacto#agenda',
   navigation: [
     { label: 'Inicio', href: '/' },
