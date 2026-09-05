@@ -41,7 +41,7 @@ export default function Home() {
               <Link
                 href={bookingHref}
                 target={hasExternalBooking ? '_blank' : undefined}
-                rel={hasExternalBooking ? 'noreferrer' : undefined}
+                rel={hasExternalBooking ? 'noopener noreferrer' : undefined}
                 className={cn(buttonVariants({ size: 'lg' }), 'gold-button')}
               >
                 Solicitar consulta <CalendarDays aria-hidden="true" />
@@ -87,8 +87,13 @@ export default function Home() {
                     <div><strong>Reciba confirmación</strong><p>Los datos definitivos se incorporarán antes del uso comercial.</p></div>
                   </div>
                 </div>
-                <Link href={bookingHref} className={cn(buttonVariants({ size: 'lg' }), 'gold-button')}>
-                  Ir a contacto <ArrowUpRight aria-hidden="true" />
+                <Link
+                  href={bookingHref}
+                  target={hasExternalBooking ? '_blank' : undefined}
+                  rel={hasExternalBooking ? 'noopener noreferrer' : undefined}
+                  className={cn(buttonVariants({ size: 'lg' }), 'gold-button')}
+                >
+                  {hasExternalBooking ? 'Programar una cita' : 'Ir a contacto'} <ArrowUpRight aria-hidden="true" />
                 </Link>
                 {!hasExternalBooking && <p className="calendar-pending">Google Calendar aún no está configurado.</p>}
               </div>
